@@ -18,7 +18,7 @@ class Item(BaseModel):
 async def root(item: Item):
     text = item.text
 
-    tokenizer, model = import_model("../Model/saved_models")
+    tokenizer, model = import_model("../Model/finetuned_distilled_bert")
     prediction = classify_text(text, tokenizer, model)
 
     return prediction
